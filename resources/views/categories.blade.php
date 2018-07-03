@@ -2,10 +2,15 @@
 
 @section('content')
 <div class="container">
-    <h1>Categories</h1>
+    <div class="title">
+        <h1>Categories</h1>
+    </div>
 
-    @foreach ($categories as $category)
-    <h2>{{ $category->name }}</h2>
+    <div class="links">
+        @foreach ($categories as $category)
+        <h2>{{ $category->name }}</h2>
     @endforeach
+    </div>
 </div>
+
 @endsection
