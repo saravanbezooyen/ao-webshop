@@ -11,12 +11,24 @@ class Products extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('products', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-        });    
+
+    public function up() 
+    { 
+        Schema::create( 'products', function ( Blueprint $table ) { 
+            $table->increments( 'id' ); 
+            $table->integer( 'category_id' )->unsigned(); 
+            $table->string( 'title' ); 
+            $table->double( 'original_price' ); 
+            $table->double( 'discount_price' ); 
+            $table->tinyInteger( 'in_stock' )->default( 1 ); 
+            $table->tinyInteger( 'status' )->default( 0 ); $table->timestamps(); 
+            $table->softDeletes(); 
+
+            $table->foreign( 'category_id' ) 
+                ->references( 'id' )->on( 'categories' ) 
+                ->onDelete( 'cascade' ) 
+                ->onUpdate( 'cascade' ); 
+            } ); 
     }
 
     /**

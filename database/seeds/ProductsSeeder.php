@@ -12,10 +12,7 @@ class ProductsSeeder extends Seeder
     public function run()
     {
         DB::table('products')->insert([
-        	['name' => 'Wit t-shirt'],
-        	['name' => 'Jurkje'],
-        	['name' => 'Sneakers'],
-        	['name' => 'Rugtas']
+        	['name' => 'Hoge hakken', 'product_category' => '7']
         ]);
     }
 }
