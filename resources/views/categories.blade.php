@@ -8,8 +8,8 @@
 
     <div class="links">
         @foreach ($categories as $category)
-        <h2>{{ $category->name }}</h2>
-    @endforeach
+        <a href="/products/{{$category->id }}">{{ $category->name }}</a>
+        @endforeach
     </div>
 </div>
 
